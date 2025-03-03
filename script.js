@@ -15,5 +15,15 @@ function getUserChoice(){
 }
 
 function playRound(userChoice,computerChoice){
-    if (userChoice === computerChoice){return ""}
+    if (userChoice === computerChoice){return "Draw!";}
+
+    else if((userChoice === "rock" && computerChoice === "scissors") || 
+             (userChoice === "paper" && computerChoice === "rock") ||
+             (userChoice === "scissors" && computerChoice ==="paper"))
+             {
+                console.log(`You win! ${userChoice} beats ${computerChoice}`);
+             }
+    else{
+        console.log(`You win! ${computerChoice} beats ${userChoice}`);
+    }
 }
