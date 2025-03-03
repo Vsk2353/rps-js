@@ -1,6 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
 function getComputerChoice(){
     let a = Math.floor(Math.random()*3)
     
@@ -14,18 +11,37 @@ function getUserChoice(){
     return userChoice.toLowerCase();
 }
 
-function playRound(userChoice,computerChoice){
-    if (userChoice === computerChoice){return "Draw!";}
 
-    else if((userChoice === "rock" && computerChoice === "scissors") || 
-             (userChoice === "paper" && computerChoice === "rock") ||
-             (userChoice === "scissors" && computerChoice ==="paper"))
-             {
-                console.log(`You win! ${userChoice} beats ${computerChoice}`);
-                humanScore++;
-             }
-    else{
-        console.log(`You win! ${computerChoice} beats ${userChoice}`);
-        computerScore++;
+
+function playGame(){
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound(userChoice,computerChoice){
+        if (userChoice === computerChoice){return "It's a draw!";}
+    
+        else if((userChoice === "rock" && computerChoice === "scissors") || 
+                 (userChoice === "paper" && computerChoice === "rock") ||
+                 (userChoice === "scissors" && computerChoice ==="paper"))
+                 {
+                    console.log(`You win! ${userChoice} beats ${computerChoice}`);
+                    humanScore++;
+                 }
+        else{
+            console.log(`You lose! ${computerChoice} beats ${userChoice}`);
+            computerScore++;
+        }
+
+        console.log(`Your score : ${humanScore} | Computer score : ${computerScore}`);
     }
+
+    for(let i=0;i<5;i++){
+        playRound(getUserChoice(),getComputerChoice());
+    }
+
+    if (humanScore === computerScore) {console.log("Draw match!!");}
+    else if(humanScore > computerScore) {console.log("Congrats! You win!");}
+    else {console.log("You lose! Better luck next time!!"); }
 }
+
+playGame();
