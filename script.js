@@ -58,7 +58,6 @@ function playRound(userChoice,computerChoice){
     }
 
 //EVENTS
-
 let b1 = document.querySelector("#one");
 b1.addEventListener("click", function () {
     let userChoice = "rock";
