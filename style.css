@@ -1,0 +1,39 @@
+.heroMain {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#result {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.scoreboard {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.userScore, .computerScore {
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+#finalMessage {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: red;
+    margin-top: 30px;
+}
